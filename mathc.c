@@ -1046,6 +1046,15 @@ mfloat_t *vec2_lerp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t f)
 	return result;
 }
 
+mfloat_t *vec2_bilinear(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t *v3, mfloat_t u, mfloat_t v) {
+    mfloat_t tmp0[VEC2_SIZE];
+    mfloat_t tmp1[VEC2_SIZE];
+    vec2_lerp(tmp0, v0, v1, u);
+    vec2_lerp(tmp1, v2, v3, u);
+    vec2_lerp(result, tmp0, tmp1, v);
+    return result;
+}
+
 mfloat_t *vec2_bezier3(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t f)
 {
 	mfloat_t tmp0[VEC2_SIZE];
@@ -1451,6 +1460,15 @@ mfloat_t *vec3_lerp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t f)
 	return result;
 }
 
+mfloat_t *vec3_bilinear(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t *v3, mfloat_t u, mfloat_t v) {
+    mfloat_t tmp0[VEC3_SIZE];
+    mfloat_t tmp1[VEC3_SIZE];
+    vec3_lerp(tmp0, v0, v1, u);
+    vec3_lerp(tmp1, v2, v3, u);
+    vec3_lerp(result, tmp0, tmp1, v);
+    return result;
+}
+
 mfloat_t *vec3_bezier3(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t f)
 {
 	mfloat_t tmp0[VEC3_SIZE];
@@ -1823,6 +1841,15 @@ mfloat_t *vec4_lerp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t f)
 	result[2] = v0[2] + (v1[2] - v0[2]) * f;
 	result[3] = v0[3] + (v1[3] - v0[3]) * f;
 	return result;
+}
+
+mfloat_t *vec4_bilinear(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t *v3, mfloat_t u, mfloat_t v) {
+    mfloat_t tmp0[VEC2_SIZE];
+    mfloat_t tmp1[VEC2_SIZE];
+    vec4_lerp(tmp0, v0, v1, u);
+    vec4_lerp(tmp1, v2, v3, u);
+    vec4_lerp(result, tmp0, tmp1, v);
+    return result;
 }
 
 bool quat_is_zero(mfloat_t *q0)
