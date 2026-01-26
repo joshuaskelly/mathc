@@ -1834,6 +1834,10 @@ mfloat_t *vec4_normalize(mfloat_t *result, mfloat_t *v0)
 	return result;
 }
 
+mfloat_t vec4_dot(mfloat_t *v0, mfloat_t *v1) {
+    return v0[0] * v1[0] + v0[1] * v1[1] + v0[2] * v1[2] + v0[3] * v1[3];
+}
+
 mfloat_t *vec4_lerp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t f)
 {
 	result[0] = v0[0] + (v1[0] - v0[0]) * f;

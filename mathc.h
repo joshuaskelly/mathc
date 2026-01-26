@@ -366,6 +366,7 @@ mfloat_t *vec4_max(mfloat_t *result, mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec4_min(mfloat_t *result, mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec4_clamp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2);
 mfloat_t *vec4_normalize(mfloat_t *result, mfloat_t *v0);
+mfloat_t vec4_dot(mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec4_lerp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t f);
 mfloat_t *vec4_bilinear(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2, mfloat_t *v3, mfloat_t u, mfloat_t v);
 bool quat_is_zero(mfloat_t *q0);
