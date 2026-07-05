@@ -272,6 +272,7 @@ mfloat_t *vec2_round(mfloat_t *result, mfloat_t *v0);
 mfloat_t *vec2_max(mfloat_t *result, mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec2_min(mfloat_t *result, mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec2_clamp(mfloat_t *result, mfloat_t *v0, mfloat_t *v1, mfloat_t *v2);
+mfloat_t vec2_cross(mfloat_t *v0, mfloat_t* v1);
 mfloat_t *vec2_normalize(mfloat_t *result, mfloat_t *v0);
 mfloat_t vec2_dot(mfloat_t *v0, mfloat_t *v1);
 mfloat_t *vec2_project(mfloat_t *result, mfloat_t *v0, mfloat_t *v1);
